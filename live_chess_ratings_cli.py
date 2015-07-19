@@ -20,7 +20,7 @@ try :
     final_table.add_row(table_header)
     
     web_page = urllib2.urlopen("http://2700chess.com").read()
-    soup = BeautifulSoup(web_page)
+    soup = BeautifulSoup(web_page, "lxml")
     table = soup.find('table', {'id': 'live-ratings-table'})
     rows = table.find_all('tr')
     
